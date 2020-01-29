@@ -1,6 +1,10 @@
 module RTTLSpec exposing (spec)
 
 import Expect
+import RTTL exposing (..)
+import RTTL.Note exposing (..)
+import RTTL.Pitch exposing (..)
+import RTTL.Tone exposing (..)
 import Test exposing (..)
 
 
@@ -10,6 +14,21 @@ spec =
         [ describe "parseComposer"
             [ test "parses Nokia Composer format" <|
                 \_ ->
-                    Expect.equal 1 1
+                    "32f2 32g2 32f2 16.#d2 32-"
+                        |> parseComposer { tempo = 40 }
+                        |> Expect.equal
+                            (Ok
+                                (Ringtone
+                                    { tempo = BPM 40
+                                    , tones =
+                                        [ Tone (Pitch F 2) (Normal ThirtySecond)
+                                        , Tone (Pitch G 2) (Normal ThirtySecond)
+                                        , Tone (Pitch F 2) (Normal ThirtySecond)
+                                        , Tone (Pitch Eb 2) (Dotted Sixteenth)
+                                        , Pause (Normal ThirtySecond)
+                                        ]
+                                    }
+                                )
+                            )
             ]
         ]
