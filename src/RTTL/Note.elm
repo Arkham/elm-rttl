@@ -99,7 +99,7 @@ transpose count note =
         0 ->
             note
 
-        n ->
+        _ ->
             transpose (count - 1) (next note)
 
 
