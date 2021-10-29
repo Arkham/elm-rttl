@@ -8,6 +8,7 @@
     "test:review": "elm-review"
   },
   "dependencies": {
+    "elm-format": "^0.8.5",
     "elm-review": "^2.4.6",
     "elm-test": "^0.19.1-revision6",
     "glob": "7.1.6",
