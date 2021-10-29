@@ -19,12 +19,12 @@ spec =
                         |> Expect.equal
                             (Ok
                                 (Ringtone
-                                    { tempo = BPM 40
+                                    { tempo = 40
                                     , tones =
-                                        [ Tone (Pitch F 2) (Normal ThirtySecond)
-                                        , Tone (Pitch G 2) (Normal ThirtySecond)
-                                        , Tone (Pitch F 2) (Normal ThirtySecond)
-                                        , Tone (Pitch Eb 2) (Dotted Sixteenth)
+                                        [ Tone (Pitch F 6) (Normal ThirtySecond)
+                                        , Tone (Pitch G 6) (Normal ThirtySecond)
+                                        , Tone (Pitch F 6) (Normal ThirtySecond)
+                                        , Tone (Pitch Eb 6) (Dotted Sixteenth)
                                         , Pause (Normal ThirtySecond)
                                         ]
                                     }
