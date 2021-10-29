@@ -14,11 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
+      - name: Setup Elm environment
+        uses: JorelAli/setup-elm@v1
         with:
-          node-version: 14
-      - name: elm-test
-        run: npx --no-install elm-test
-      - name: elm-review
-        run: npx --no-install elm-review
+          elm-version: 0.19.1
+      - name: install deps
+        run: npm ci
+      - name: run tests
+        run: npm test

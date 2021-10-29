@@ -1,0 +1,18 @@
+{
+  "name": "",
+  "scripts": {
+    "test": "npm-run-all --print-name --silent --sequential test:make test:format test:run test:review",
+    "test:make": "elm make --docs=docs.json",
+    "test:format": "elm-format src/ tests/ --validate",
+    "test:run": "elm-test",
+    "test:review": "elm-review"
+  },
+  "dependencies": {
+    "elm-format": "^0.8.5",
+    "elm-review": "^2.4.6",
+    "elm-test": "^0.19.1-revision6",
+    "glob": "7.1.6",
+    "npm-run-all": "^4.1.5"
+  },
+  "license": "BSD-3-Clause"
+}
